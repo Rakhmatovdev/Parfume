@@ -1,5 +1,2 @@
 
-ErrorDocument 404 /404.html
-<FilesMatch "\.(jpg|jpeg|png|gif|js|css)$">
-    Header set Cache-Control "max-age=2592000, public"
-</FilesMatch>
+
