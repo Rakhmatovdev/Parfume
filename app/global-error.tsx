@@ -3,7 +3,7 @@ import React from 'react';
 
 function GlobalError() {
     return (
-        <div>404-sahig=fa topilmadi</div>
+        <div>404-sahifa topilmadi</div>
     );
 }
 
