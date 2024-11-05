@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import 'antd/dist/reset.css'; // Ant Design global uslublari
+import 'antd/dist/reset.css';
+import Navbar from "@/lib/components/Navbar";
+import Footer from "@/lib/components/Footer"; // Ant Design global uslublari
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <Navbar/>
+    <main>
+      {children}
+      </main>
+      <Footer/>
       </body>
     </html>
   );

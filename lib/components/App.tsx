@@ -1,4 +1,3 @@
-import Navbar from "@/lib/components/Navbar";
 import {
     FacebookOutlined,
     InstagramOutlined, LeftOutlined, RightOutlined,
@@ -12,7 +11,7 @@ function App() {
 
     return (
         <div>
-            <Navbar/>
+
             <section>
                 <div className="flex items-center justify-between wrapper">
                     <div className="flex flex-col gap-y-[43px]">
