@@ -1,6 +1,7 @@
+import App from "@/lib/components/App";
 export default function Home() {
   return (
    <>
-   Hello world
+ <App/>
    </>);
 }
