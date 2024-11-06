@@ -92,4 +92,27 @@ const fPages=[
     {id:4,name:"Services",path:"#"},
     {id:5,name:"Blog",path:"#"},
 ]
-export {Links, Products, Collections,Articles,fCategories,fShopping,fCustomers,fPages}
+
+const allProduct=[
+    {id: 1, image: P1.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 2, image: P2.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 3, image: P3.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 4, image: P4.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 5, image: P5.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 11, image: P1.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 12, image: P2.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 13, image: P3.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 14, image: P4.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 15, image: P5.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 21, image: P1.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 22, image: P2.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 23, image: P3.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 24, image: P4.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 25, image: P5.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 31, image: P1.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 32, image: P2.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 33, image: P3.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 34, image: P4.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+    {id: 35, image: P5.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
+]
+export {Links, Products, Collections,Articles,fCategories,fShopping,fCustomers,fPages,allProduct}

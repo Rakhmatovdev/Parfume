@@ -123,7 +123,7 @@ function App() {
                 </div>
             </section>
             <section>
-                <div className={'mt-[120px] w-full h-[866px] bg-cover'} style={{backgroundImage:`url(${SaleBG.src})`}}>
+                <div className={'mt-[120px] w-full h-[866px] bg-cover bg-center'} style={{backgroundImage:`url(${SaleBG.src})`}}>
 <div className={'max-w-[605px] pt-[227px] pl-[96px] text-white'}>
     <p className={'text-[50px] font-medium'}>Perfume Year-End Sale! Up to 50% OFF</p>
     <p className={'text-[20px] font-light'}>Discover an exquisite collection of premium perfumes at unbelievable prices during our exclusive Perfume Sale!</p>
