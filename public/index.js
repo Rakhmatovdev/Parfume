@@ -23,5 +23,6 @@ import Article2 from './images/pArticle2.png';
 import Article3 from './images/pArticle3.png';
 import Article4 from './images/pArticle4.png';
 import FooterBG from './images/Footer-bg.png';
+import AboutHero from "./images/about-hero.png"
 
-export { Logo ,Hero1,Hero2,ValuesBG,values,HeroImg,P1, P2, P3, P4, P5,Collection7,Collection6,Collection5,Collection3,Collection4,Collection2,Collection1,SaleBG,Aqua,Article1,Article2,Article3,Article4,FooterBG};
+export { Logo ,Hero1,Hero2,ValuesBG,values,HeroImg,P1, P2, P3, P4, P5,Collection7,Collection6,Collection5,Collection3,Collection4,Collection2,Collection1,SaleBG,Aqua,Article1,Article2,Article3,Article4,FooterBG,AboutHero};
