@@ -62,4 +62,34 @@ const Articles = [
         description: "Rose, often referred to as the \"Queen of Flowers,\" has held a special place in human culture and history for centuries. Beyond its captivating beauty, this iconic bloom has also inspired perfumers to create some of the most timeless and exquisite fragrances in the world."
     },
 ]
-export {Links, Products, Collections,Articles}
+
+const fCategories=[
+    {id:1,name:"Fashion",path:"#"},
+    {id:2,name:"Jewelry",path:"#"},
+    {id:3,name:"Sports",path:"#"},
+    {id:4,name:"Electronics",path:"#"},
+    {id:5,name:"Indoor",path:"#"},
+]
+
+const fShopping=[
+    {id:1,name:"Payments",path:"#"},
+    {id:2,name:"Delivery options",path:"#"},
+    {id:3,name:"Buyer protection",path:"#"},
+]
+
+const fCustomers=[
+    {id:1,name:"Help center",path:"#"},
+    {id:2,name:"Terms & Conditions",path:"#"},
+    {id:3,name:"Privacy policy",path:"#"},
+    {id:4,name:"Returns & refund",path:"#"},
+    {id:5,name:"Survey & feedback",path:"#"},
+]
+
+const fPages=[
+    {id:1,name:"About Us",path:"#"},
+    {id:2,name:"Shop",path:"#"},
+    {id:3,name:"Contact Us",path:"#"},
+    {id:4,name:"Services",path:"#"},
+    {id:5,name:"Blog",path:"#"},
+]
+export {Links, Products, Collections,Articles,fCategories,fShopping,fCustomers,fPages}
