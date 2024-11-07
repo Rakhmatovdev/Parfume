@@ -10,7 +10,7 @@ import {
     P2,
     P3,
     P4,
-    P5
+    P5, User1, User2, User3
 } from "@/public";
 
 const Links = [
@@ -26,6 +26,9 @@ const Products = [
     {id: 4, image: P4.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
     {id: 5, image: P5.src, name: "Luxurious Elixir Rough", price: 220, volume: 100},
 ]
+
+const Product = {id: 1, image: P1.src, name: "Luxurious Elixir Rough", price: 220, volume: 100}
+
 
 const Collections = [
     {id: 1, image: Collection1.src, name: "Designer Delights Collection"},
@@ -134,4 +137,28 @@ const Makes = [
     }
 ]
 
-export {Links, Products, Collections, Articles, fCategories, fShopping, fCustomers, fPages, allProduct,Makes}
+const Reviews = [
+    {
+        id: 1,
+        image: User1.src,
+        name: "Jack Smith",
+        title: "Very lovely fragrance. Would recommend to individuals looking for a combination of sweetness and elegance in perfume. I like floral perfume, and this one is lovely, it's not overpowering. Nice, pleasant scent. I am happy with purchase.",
+        createdAt: "June 03, 2023"
+    },
+    {
+        id: 2,
+        image:User2.src,
+        name:"Ashley",
+        title: 'I like floral perfume, and this one is lovely, it\'s not overpowering. Nice, pleasant scent. I am happy with purchase.',
+        createdAt: "January 05, 2023"
+    },
+    {
+        id: 3,
+        image:User3.src,
+        name: "Lauri Jess",
+        title:"I tried a sample and fell in love with this fragrance so I had to buy my first bottle. This fragrance is my treat for me. It helps to create a good mood. During a stressful day really nice to stop a few moments and revisit the scent from my wrists. I really love the fact that it doesn't take the air out of the room. Some scents are so overbearing but not this on. Try it you just might really love it.",
+        createdAt: "October 05, 2022"
+    }
+]
+
+export {Links, Products, Collections, Articles, fCategories, fShopping, fCustomers, fPages, allProduct, Makes, Product,Reviews}
