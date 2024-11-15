@@ -5,7 +5,7 @@ import {Rate} from "antd";
 import Badger from "@/lib/components/Badge";
 import {HeartOutlined} from "@ant-design/icons";
 import {Aferpay} from "@/public";
-import Progressing from "@/app/Progres";
+import Progressing from "@/lib/components/Progres";
 
 function ProductDetails() {
     return (

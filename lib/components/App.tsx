@@ -1,3 +1,4 @@
+'use client'
 import {
     FacebookOutlined,
     InstagramOutlined, LeftOutlined, RightOutlined,
@@ -6,9 +7,30 @@ import {
 import Image from "next/image";
 import {Hero1, Hero2, HeroImg, SaleBG, values, ValuesBG} from "@/public";
 import {Articles, Collections, Products} from "@/lib/types/type";
+import {useQuery} from "@tanstack/react-query";
+import {getProducts} from "@/lib/services/service";
+import { useEffect } from "react";
 
 function App() {
-
+    // const {data,isError} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
+    // console.log(data)
+    async function getData() {
+        const url = "https://parfumeapi.pythonanywhere.com/api/v1/products";
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+          }
+      
+          const json = await response.json();
+          console.log(json);
+        } catch (error) {
+          console.error(error.message);
+        }
+      }
+      useEffect(()=>{
+        getData()
+      })
     return (
         <div>
 
