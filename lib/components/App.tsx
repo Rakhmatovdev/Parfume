@@ -15,7 +15,12 @@ import Image from "next/image";
 
 function App() {
     const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
-    const {data:Collections} = useQuery({ queryKey: ['categories'], queryFn: getCollections,select:(data)=>data?.results})
+    const { data: Collections } = useQuery({
+        queryKey: ['categories'],
+        queryFn: getCollections,
+        select: (data) => data?.results, // Access results on a single PaginatedCategoryResponse
+      });
+      
     return (
         <div>
 

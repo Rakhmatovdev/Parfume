@@ -5,7 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../services/service";
 
 function Products() {
-    const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
+    const { data } = useQuery({
+        queryKey: ['todos'],
+        queryFn: getProducts,
+      });
+      
     console.log(data)
     return (
         <data>
