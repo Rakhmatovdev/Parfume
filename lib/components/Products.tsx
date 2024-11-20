@@ -1,10 +1,14 @@
-import {allProduct} from "@/lib/types/type";
+'use client'
 import Image from "next/image";
 import {Aqua, SaleBG} from "@/public";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "../services/service";
 
 function Products() {
+    const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
+    console.log(data)
     return (
-        <div>
+        <data>
             <section>
                 <div className={'pt-[243px] wrapper'}>
                     <p className={'text-center text-[#C78800] text-[32px]'}>Best Selling Products</p>
@@ -14,9 +18,7 @@ function Products() {
                             <p className={'my-0'}>Filter by</p>
                             <select className={'outline-none'}>
                                 <option>Collections</option>
-                                <option>Collections 1</option>
-                                <option>Collections 2</option>
-                                <option>Collections 3</option>
+                                <option>Channel Parfume</option>
                             </select>
                             <select className={'outline-none'}>
                                 <option>Fragrance Families</option>
@@ -26,9 +28,8 @@ function Products() {
                             </select>
                             <select className={'outline-none'}>
                                 <option>Gender</option>
-                                <option>Gender 1</option>
-                                <option>Gender 2</option>
-                                <option>Gender 3</option>
+                                <option>Male</option>
+                                <option>Female</option>
                             </select>
                             <select className={'outline-none'}>
                                 <option>Occasions</option>
@@ -47,11 +48,42 @@ function Products() {
                         </div>
                     </form>
                     <div className={'pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-11'}>
-                        {allProduct.map((product) => (<div className={'h-[350px] 2xl:h-[405px]   bg-black rounded-2xl  text-white'} key={product.id}>
-                            <Image className={''} src={product.image} alt={product.name} width={310} height={374}/>
-                            <p className={" pt-[14px] text-center text-[20px] leading-none my-0 "}>{product.name}</p>
-                            <div className={'flex justify-center items-center gap-x-1 mt-2'}><p className={'text-[#FFBF34]'}>${product.price}.00</p><p>{product.volume}ml</p></div>
-                        </div>))}
+                    {data 
+  ? Array(20).fill(data?.results).flat().slice(0, 20).map((product, id) => (
+    <div 
+      className={'h-[350px] 2xl:h-[405px] bg-black rounded-2xl text-white'} 
+      key={id}
+    >
+      <Image 
+        className={''} 
+        src={product.images?.[0]?.images} 
+        alt={product.title_ru} 
+        width={310} 
+        height={310} 
+      />
+      <p className={"pt-[14px] text-center text-[20px] leading-none my-0"}>
+        {product.title_en}
+      </p>
+      <div className={'flex justify-center items-center gap-x-1 mt-2'}>
+        <p className={'text-[#FFBF34]'}>${product.price}</p>
+        <p>{product.description_ru}</p>
+      </div>
+    </div>
+  ))
+  : Array(20).fill(null).map((_, id) => ( // Render skeletons when no data
+    <div 
+      className={'h-[350px] 2xl:h-[405px] bg-gray-300 rounded-2xl animate-pulse'} 
+      key={id}
+    >
+      <div className={'h-[260px] bg-gray-400 w-full rounded-t-2xl'}></div>
+      <div className={'h-[20px] bg-gray-400 mt-4  mx-auto w-[70%] rounded'}></div>
+      <div className={'h-[20px] bg-gray-400  mt-2 mx-auto w-[50%] rounded'}></div>
+    </div>
+  ))
+}
+
+
+
                     </div>
                 </div>
             </section>
@@ -89,7 +121,7 @@ function Products() {
                     </div>
                 </div>
             </section>
-        </div>
+        </data>
     );
 }
 

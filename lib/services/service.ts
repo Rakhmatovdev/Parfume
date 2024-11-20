@@ -1,28 +1,15 @@
 import { AxiosResponse } from "axios";
 import request from "./request";
+import { PaginatedResponse,PaginatedCategoryResponse} from "../types/type";
 
-interface PostData {
-    id: string;
-    title: string;
-    body: string;
-    userId: string;
-}
 
-interface CreatePostData {
-    title: string;
-    body: string;
-    userId: number;
-}
 
-interface UpdatePostData {
-    title?: string;
-    body?: string;
-    userId?: number;
-}
 
-export const getProducts = (params?: Record<string, any>): Promise<PostData[]> =>
-    request.get('/products', { params }).then((res: AxiosResponse<PostData[]>) => res.data);
+export const getProducts = (params?: Record<string, any>): Promise<PaginatedResponse[]> =>
+    request.get('/products', { params }).then((res: AxiosResponse<PaginatedResponse[]>) => res.data);
 
+export const getCollections = (params?: Record<string, any>): Promise<PaginatedCategoryResponse[]> =>
+    request.get('/categories/', { params }).then((res: AxiosResponse<PaginatedCategoryResponse[]>) => res.data);
 
 // export const createProducts = (data: CreateProductsData): Promise<Post> =>
 //     request.post('/products', data, {

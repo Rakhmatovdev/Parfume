@@ -1,0 +1,112 @@
+[
+    {
+        "id": "feb4a7c2-4871-453b-a91a-4e3a8d11ccfc",
+        "title_ru": "Роскошный эликсир грубый",
+        "title_en": "Luxurious Elixir Rough",
+        "price": "219.98",
+        "description_ru": "100 ml",
+        "description_en": "150 ml",
+        "gender": "Female",
+        "discount_price": "1.09",
+        "is_discounted": true,
+        "is_show_new_arrival": false,
+        "is_best_sellers": false,
+        "is_recommended": false,
+        "category": "015fbe7a-0855-4bf5-93b4-c40016d4bc85",
+        "quantity": 20.0,
+        "images": [
+            {
+                "uuid": "befd4446-9737-492b-98a1-21d2d6d9eb1b",
+                "images": "https://parfumeapi.pythonanywhere.com/media/product_images/p1_TcUSSLJ.png"
+            }
+        ]
+    },
+    {
+        "id": "9ebf58e0-2112-46eb-b51e-86e1acce673b",
+        "title_ru": "2",
+        "title_en": "Luxurious Elixir Rough",
+        "price": "220.00",
+        "description_ru": "100 ml",
+        "description_en": "150 ml",
+        "gender": "Male",
+        "discount_price": "2.00",
+        "is_discounted": true,
+        "is_show_new_arrival": false,
+        "is_best_sellers": false,
+        "is_recommended": false,
+        "category": "015fbe7a-0855-4bf5-93b4-c40016d4bc85",
+        "quantity": 20.0,
+        "images": [
+            {
+                "uuid": "aece2949-903b-4e54-90b4-a44502924cbb",
+                "images": "https://parfumeapi.pythonanywhere.com/media/product_images/p2.png"
+            }
+        ]
+    },
+    {
+        "id": "2e8f7861-28fe-46d0-bef4-832edda457a7",
+        "title_ru": "Роскошный эликсир грубый",
+        "title_en": "Luxurious Elixir Rough",
+        "price": "222.00",
+        "description_ru": "100 ml",
+        "description_en": "150 ml",
+        "gender": "Female",
+        "discount_price": "1.00",
+        "is_discounted": true,
+        "is_show_new_arrival": false,
+        "is_best_sellers": false,
+        "is_recommended": false,
+        "category": "015fbe7a-0855-4bf5-93b4-c40016d4bc85",
+        "quantity": 8.0,
+        "images": [
+            {
+                "uuid": "29212539-027f-45d9-8c3a-af1f55023414",
+                "images": "https://parfumeapi.pythonanywhere.com/media/product_images/p3.png"
+            }
+        ]
+    },
+    {
+        "id": "231018fe-8945-4be1-bb54-6fd11aae0a59",
+        "title_ru": "Роскошный эликсир грубый",
+        "title_en": "Luxurious Elixir Rough",
+        "price": "200.00",
+        "description_ru": "100 ml",
+        "description_en": "150 ml",
+        "gender": "Female",
+        "discount_price": "1.00",
+        "is_discounted": true,
+        "is_show_new_arrival": false,
+        "is_best_sellers": true,
+        "is_recommended": true,
+        "category": "015fbe7a-0855-4bf5-93b4-c40016d4bc85",
+        "quantity": 12.0,
+        "images": [
+            {
+                "uuid": "a4bb41d8-e9fd-4a89-9b1c-1541f186eda0",
+                "images": "https://parfumeapi.pythonanywhere.com/media/product_images/p4.png"
+            }
+        ]
+    },
+    {
+        "id": "c3da6550-ecd7-4b5d-b88c-3ee3860efcc2",
+        "title_ru": "Роскошный эликсир грубый",
+        "title_en": "Luxurious Elixir Rough",
+        "price": "220.00",
+        "description_ru": "100 ml",
+        "description_en": "150 ml",
+        "gender": "Male",
+        "discount_price": "0.05",
+        "is_discounted": true,
+        "is_show_new_arrival": false,
+        "is_best_sellers": false,
+        "is_recommended": true,
+        "category": "015fbe7a-0855-4bf5-93b4-c40016d4bc85",
+        "quantity": 14.0,
+        "images": [
+            {
+                "uuid": "12e895c1-8e27-4861-94a2-1951ef5b1863",
+                "images": "https://parfumeapi.pythonanywhere.com/media/product_images/p5.png"
+            }
+        ]
+    }
+]
