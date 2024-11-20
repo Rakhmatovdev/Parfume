@@ -33,7 +33,7 @@ function App() {
                             <p className="text-[15px] font-semibold">Name of Stakeholder</p>
                             <div className='flex flex-col gap-y-[4px] text-[#4B4B4B]'>
                                 <p className={'text-[15px] font-semibold'}>ABOUT</p>
-                                <p className={'w-[308px] text-[14px]'}>Introducing "Titanic Elegance," a perfume
+                                <p className={'w-[308px] text-[14px]'}>Introducing &quot;Titanic Elegance,&quot; a perfume
                                     inspired by the iconic movie Titanic. Just like the engine telegraph in the Titanic,
                                     this fragrance controls the essence of elegance and sophistication, guiding you
                                     through your day with grace and style.</p>

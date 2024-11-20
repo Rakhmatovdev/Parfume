@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from "next/image";
-// @ts-ignore
 import {Logo} from "@/public";
 import { Links} from "@/lib/types/type";
 import { SearchOutlined} from "@ant-design/icons";

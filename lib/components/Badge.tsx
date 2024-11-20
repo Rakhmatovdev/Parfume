@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
@@ -6,7 +6,6 @@ const ButtonGroup = Button.Group;
 
 const Badger: React.FC = () => {
     const [count, setCount] = useState(0);
-    const [show, setShow] = useState(true);
 
     const increase = () => {
         setCount(count + 1);

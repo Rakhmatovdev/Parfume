@@ -297,13 +297,13 @@ const Makes = [
     id: 2,
     title: "High-Quality Ingredients",
     description:
-      "We believe that the key to an extraordinary scent lies in the quality of ingredients. That&apos;s why we collaborate with expert perfumers who source the finest and ethically-sourced materials from around the world. We never compromise on the quality of our products, ensuring a long-lasting and luxurious experience.",
+      "We believe that the key to an extraordinary scent lies in the quality of ingredients. That`s why we collaborate with expert perfumers who source the finest and ethically-sourced materials from around the world. We never compromise on the quality of our products, ensuring a long-lasting and luxurious experience.",
   },
   {
     id: 3,
     title: "Personalized Service",
     description:
-      "We understand that choosing the perfect scent is a deeply personal experience. Our team of fragrance experts is always ready to assist you in finding a fragrance that complements your personality and style. Whether you're exploring new scents or seeking to rediscover an old favorite, we&apos;re here to guide you every step of the way.",
+      "We understand that choosing the perfect scent is a deeply personal experience. Our team of fragrance experts is always ready to assist you in finding a fragrance that complements your personality and style. Whether you're exploring new scents or seeking to rediscover an old favorite, we`re here to guide you every step of the way.",
   },
 ];
 
@@ -313,7 +313,7 @@ const Reviews = [
     image: User1.src,
     name: "Jack Smith",
     title:
-      "Very lovely fragrance. Would recommend to individuals looking for a combination of sweetness and elegance in perfume. I like floral perfume, and this one is lovely, it&apos;s not overpowering. Nice, pleasant scent. I am happy with purchase.",
+      "Very lovely fragrance. Would recommend to individuals looking for a combination of sweetness and elegance in perfume. I like floral perfume, and this one is lovely, it`s not overpowering. Nice, pleasant scent. I am happy with purchase.",
     createdAt: "June 03, 2023",
   },
   {
@@ -321,7 +321,7 @@ const Reviews = [
     image: User2.src,
     name: "Ashley",
     title:
-      "I like floral perfume, and this one is lovely, it&apos;s not overpowering. Nice, pleasant scent. I am happy with purchase.",
+      "I like floral perfume, and this one is lovely, it`s not overpowering. Nice, pleasant scent. I am happy with purchase.",
     createdAt: "January 05, 2023",
   },
   {
@@ -329,7 +329,7 @@ const Reviews = [
     image: User3.src,
     name: "Lauri Jess",
     title:
-      "I tried a sample and fell in love with this fragrance so I had to buy my first bottle. This fragrance is my treat for me. It helps to create a good mood. During a stressful day really nice to stop a few moments and revisit the scent from my wrists. I really love the fact that it doesn&apos;t take the air out of the room. Some scents are so overbearing but not this on. Try it you just might really love it.",
+      "I tried a sample and fell in love with this fragrance so I had to buy my first bottle. This fragrance is my treat for me. It helps to create a good mood. During a stressful day really nice to stop a few moments and revisit the scent from my wrists. I really love the fact that it doesn`t take the air out of the room. Some scents are so overbearing but not this on. Try it you just might really love it.",
     createdAt: "October 05, 2022",
   },
 ];
