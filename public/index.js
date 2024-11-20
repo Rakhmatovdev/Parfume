@@ -2,18 +2,6 @@ import Logo from './images/Logo.svg';
 import ValuesBG from "./images/values_bg.png"
 import values from './images/values.png'
 import HeroImg from './images/Hero-image.png';
-import P1 from './images/p1.png';
-import P2 from './images/p2.png';
-import P3 from './images/p3.png';
-import P4 from './images/p4.png';
-import P5 from './images/p5.png';
-import Collection1 from './images/collection1.png';
-import Collection2 from './images/collection2.png';
-import Collection3 from './images/collection3.png';
-import Collection4 from './images/collection4.png';
-import Collection5 from './images/collection5.png';
-import Collection6 from './images/collection6.png';
-import Collection7 from './images/collection7.png';
 import SaleBG from './images/Sale-bg.png'
 import Aqua from './images/SaleBG2.png'
 import Article1 from './images/pArticle1.png';
@@ -27,4 +15,4 @@ import User1 from './images/user.svg';
 import User2 from './images/user2.svg';
 import User3 from './images/user3.svg';
 
-export { Logo ,ValuesBG,values,HeroImg,P1, P2, P3, P4, P5,Collection7,Collection6,Collection5,Collection3,Collection4,Collection2,Collection1,SaleBG,Aqua,Article1,Article2,Article3,Article4,FooterBG,AboutHero,Aferpay,User1,User2,User3};
+export { Logo ,ValuesBG,values,HeroImg,SaleBG,Aqua,Article1,Article2,Article3,Article4,FooterBG,AboutHero,Aferpay,User1,User2,User3};

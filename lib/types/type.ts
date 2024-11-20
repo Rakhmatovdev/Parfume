@@ -2,19 +2,8 @@ import {
   Article1,
   Article2,
   Article3,
+
   Article4,
-  Collection1,
-  Collection2,
-  Collection3,
-  Collection4,
-  Collection5,
-  Collection6,
-  Collection7,
-  P1,
-  P2,
-  P3,
-  P4,
-  P5,
   User1,
   User2,
   User3,
@@ -26,61 +15,9 @@ const Links = [
   { id: 3, name: "Contact", url: "/contact" },
   { id: 4, name: "Products", url: "/products" },
 ];
-const Products = [
-  {
-    id: 1,
-    image: P1.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 2,
-    image: P2.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 3,
-    image: P3.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 4,
-    image: P4.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 5,
-    image: P5.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-];
 
-const Product = {
-  id: 1,
-  image: P1.src,
-  name: "Luxurious Elixir Rough",
-  price: 220,
-  volume: 100,
-};
 
-const Collections = [
-  { id: 1, image: Collection1.src, name: "Designer Delights Collection" },
-  { id: 2, image: Collection2.src, name: "Travel Essentials Collection" },
-  { id: 3, image: Collection3.src, name: "Special Occasions Collection" },
-  { id: 4, image: Collection4.src, name: "Seasonal Sensations Collection" },
-  { id: 5, image: Collection5.src, name: "Vintage Treasures Collection" },
-  { id: 6, image: Collection6.src, name: "Limited Edition Treasures" },
-  { id: 7, image: Collection7.src, name: "Modern Classics Collection" },
-];
+
 
 const Articles = [
   {
@@ -143,148 +80,7 @@ const fPages = [
   { id: 5, name: "Blog", path: "#" },
 ];
 
-const allProduct = [
-  {
-    id: 1,
-    image: P1.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 2,
-    image: P2.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 3,
-    image: P3.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 4,
-    image: P4.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 5,
-    image: P5.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 11,
-    image: P1.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 12,
-    image: P2.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 13,
-    image: P3.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 14,
-    image: P4.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 15,
-    image: P5.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 21,
-    image: P1.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 22,
-    image: P2.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 23,
-    image: P3.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 24,
-    image: P4.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 25,
-    image: P5.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 31,
-    image: P1.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 32,
-    image: P2.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 33,
-    image: P3.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 34,
-    image: P4.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-  {
-    id: 35,
-    image: P5.src,
-    name: "Luxurious Elixir Rough",
-    price: 220,
-    volume: 100,
-  },
-];
+
 
 const Makes = [
   {
@@ -357,7 +153,7 @@ export interface PostData {
   }
   
   
-  export interface PaginatedResponse {
+  export type PaginatedResponse={
     count?: number;            
     next?: string | null;       
     previous?: string | null;   
@@ -383,15 +179,11 @@ export interface CategoryData {
 
 export {
   Links,
-  Products,
-  Collections,
   Articles,
   fCategories,
   fShopping,
   fCustomers,
   fPages,
-  allProduct,
   Makes,
-  Product,
   Reviews,
 };

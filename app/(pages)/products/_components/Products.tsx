@@ -3,6 +3,7 @@ import { Aqua, SaleBG } from "@/public";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { getProducts } from "../../../../lib/services/service";
+import Link from "next/link";
 
 function Products() {
     const { data } = useQuery({
@@ -10,7 +11,6 @@ function Products() {
         queryFn: getProducts,
       });
       
-    console.log(data)
     return (
         <data>
             <section>
@@ -54,9 +54,10 @@ function Products() {
                     <div className={'pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-11'}>
                     {data 
   ? Array(20).fill(data?.results).flat().slice(0, 20).map((product, id) => (
-    <div 
-      className={'h-[350px] 2xl:h-[405px] bg-black rounded-2xl text-white'} 
+    <Link href={`products/${product.id}`}  
+      className={'h-[350px] 2xl:h-[405px] bg-black rounded-2xl text-white cursor-pointer'} 
       key={id}
+      
     >
       <Image 
         className={''} 
@@ -72,7 +73,7 @@ function Products() {
         <p className={'text-[#FFBF34]'}>${product.price}</p>
         <p>{product.description_ru}</p>
       </div>
-    </div>
+    </Link>
   ))
   : Array(20).fill(null).map((_, id) => ( // Render skeletons when no data
     <div 

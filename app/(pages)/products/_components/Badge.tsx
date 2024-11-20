@@ -22,7 +22,7 @@ const Badger: React.FC = () => {
     return (
         <ButtonGroup>
             <Button onClick={decline} icon={<MinusOutlined />} />
-            <Button>{count}</Button> {/* Display count as the button's child */}
+            <Button>{count}</Button> 
             <Button onClick={increase} icon={<PlusOutlined />} />
         </ButtonGroup>
     );
