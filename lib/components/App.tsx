@@ -122,9 +122,9 @@ function App() {
         key={id}
       >
         <div className="h-[260px] bg-gray-400 w-full rounded-t-2xl"></div>
-        {/* Skeleton for title */}
+       
         <div className="h-[20px] bg-gray-400 mt-4 mx-auto w-[70%] rounded"></div>
-        {/* Skeleton for price */}
+        
         <div className="h-[20px] bg-gray-400 mt-2 mx-auto w-[50%] rounded"></div>
       </div>
     ))

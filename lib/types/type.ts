@@ -358,10 +358,10 @@ export interface PostData {
   
   
   export interface PaginatedResponse {
-    count: number;            
-    next: string | null;       
-    previous: string | null;   
-    results: PostData[];      
+    count?: number;            
+    next?: string | null;       
+    previous?: string | null;   
+    results?: PostData[] | [];      
   }
   
 
@@ -374,10 +374,10 @@ export interface CategoryData {
   }
   
  export interface PaginatedCategoryResponse {
-     count: number;            
-    next: string | null;      
-    previous: string | null;   
-    results: CategoryData[];  
+     count?: number;            
+    next?: string | null;      
+    previous?: string | null;   
+    results?: CategoryData[] | [];  
   }
   
 
