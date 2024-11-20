@@ -9,7 +9,7 @@ function About() {
                 <div className={'mt-[173px]'}>
                     <p className={'center-text'}>About Us</p>
                     <p className={'w-[1048px] text-center mx-auto text-[24px] tracking-wide'}>At Local Face, we believe
-                        that perfumes are more than just scents; they are expressions of one's individuality and style.
+                        that perfumes are more than just scents; they are expressions of one&apos;s individuality and style.
                         Our passion for exquisite fragrances led us to curate a collection that captures the essence of
                         diverse personalities, bringing you an unparalleled olfactory experience.</p>
                     <Image src={AboutHero.src} alt={"Hero image"} width={1920} height={745}/>
