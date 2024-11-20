@@ -39,8 +39,8 @@ function App() {
                         </div>
                     </div>
                     <div className="relative">
-                        <Image src={Hero1.src} alt="Hero 1" width={430} height={648} className=""/>
-                        <Image src={Hero2.src} alt="Hero 1" width={328} height={494}
+                        <Image src={Hero1} alt="Hero 1" width={430} height={648} className=""/>
+                        <Image src={Hero2} alt="Hero 1" width={328} height={494}
                                className="absolute bottom-10 left-[247px] -z-10"/>
                     </div>
                     <div className="flex flex-col items-center  gap-y-[150px] translate-x-8">
