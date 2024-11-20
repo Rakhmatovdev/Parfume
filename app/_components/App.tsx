@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { Suspense } from "react";
 import Loading from "../loading";
+import Link from "next/link";
 
 
 function App() {
@@ -112,14 +113,14 @@ function App() {
                     <div className="flex gap-11">
                     {data ? (
   Array(5).fill(data?.results).flat().slice(0, 5).map((product, id) => (
-    <div className="w-[310px] h-[345px] bg-black rounded-2xl text-white" key={id}>
+    <Link href={`products/${product.id}`}  className="cursor-pointer  w-[310px] h-[345px] bg-black rounded-2xl text-white" key={id}>
       <Image className="" src={product.images?.[0]?.images} alt={product.title_en} width={310} height={374} />
       <p className="pt-[14px] text-center text-[20px] leading-none my-0">{product.title_en}</p>
       <div className="flex justify-center items-center gap-x-1 mt-2">
         <p className="text-[#FFBF34]">${product.price}</p>
         <p>{product.description_ru}</p>
       </div>
-    </div>
+    </Link>
   ))
 ) : (
   Array(5)
