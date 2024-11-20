@@ -11,6 +11,8 @@ import {
 } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
     const { data: Collections } = useQuery({
         queryKey: ['categories'],
         queryFn: getCollections,
-        select: (data) => data?.results, // Access results on a single PaginatedCategoryResponse
+        select: (data) => data?.results,
       });
       
     return (
@@ -106,7 +108,8 @@ function App() {
             <section>
                 <div className="wrapper">
                 <p className={'center-text'}>Best selling products</p>
-                    <div className={'flex gap-11'}>
+                    <Suspense fallback={<Loading/>} >
+                    <div className="flex gap-11">
                     {data ? (
   Array(5).fill(data?.results).flat().slice(0, 5).map((product, id) => (
     <div className="w-[310px] h-[345px] bg-black rounded-2xl text-white" key={id}>
@@ -133,9 +136,9 @@ function App() {
         <div className="h-[20px] bg-gray-400 mt-2 mx-auto w-[50%] rounded"></div>
       </div>
     ))
-)}
+)}</div>
 
-                    </div>
+                    </Suspense>
                 </div>
             </section>
             <section>

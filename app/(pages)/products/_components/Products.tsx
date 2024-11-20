@@ -1,8 +1,8 @@
 'use client'
-import Image from "next/image";
-import {Aqua, SaleBG} from "@/public";
+import { Aqua, SaleBG } from "@/public";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../services/service";
+import Image from "next/image";
+import { getProducts } from "../../../../lib/services/service";
 
 function Products() {
     const { data } = useQuery({

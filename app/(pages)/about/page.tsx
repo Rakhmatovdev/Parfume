@@ -1,5 +1,5 @@
 import React from 'react';
-import About from "@/lib/components/About";
+import About from "@/app/(pages)/about/_components/About";
 
 const Page = () => (
     <><About/></>

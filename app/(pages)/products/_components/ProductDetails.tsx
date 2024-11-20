@@ -2,10 +2,10 @@
 import Image from "next/image";
 import {Product, Products, Reviews} from "@/lib/types/type";
 import {Rate} from "antd";
-import Badger from "@/lib/components/Badge";
+import Badger from "@/app/(pages)/products/_components/Badge";
 import {HeartOutlined} from "@ant-design/icons";
 import {Aferpay} from "@/public";
-import Progressing from "@/lib/components/Progres";
+import Progressing from "@/app/(pages)/products/_components/Progres";
 
 function ProductDetails() {
     return (

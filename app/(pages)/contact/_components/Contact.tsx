@@ -1,9 +1,6 @@
-import React from 'react';
-
-function Contact() {
-    return (
-        <div>
-            <section className="bg-white ">
+const Contacts = () => {
+  return (
+    <section className="bg-white ">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 ">Contact
                         Us</h2>
@@ -41,8 +38,7 @@ function Contact() {
                     </form>
                 </div>
             </section>
-        </div>
-    );
+  )
 }
 
-export default Contact;
+export default Contacts
