@@ -1,5 +1,3 @@
-'use client'
-import { getCollections, getProducts } from "@/lib/services/service";
 import { Articles } from "@/lib/types/type";
 import { HeroImg, SaleBG, values, ValuesBG } from "@/public";
 import Hero1 from "../../public/images/hero1.png"
@@ -9,20 +7,25 @@ import {
     InstagramOutlined, LeftOutlined, RightOutlined,
     TwitterOutlined
 } from "@ant-design/icons";
-import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { Suspense } from "react";
 import Loading from "../loading";
 import Link from "next/link";
 
 
-function App() {
-    const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
-    const { data: Collections } = useQuery({
-        queryKey: ['categories'],
-        queryFn: getCollections,
-        select: (data) => data?.results,
-      });
+async function App() {
+    const Data = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
+    const  data= await Data.json()
+
+    const collections = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/categories/')
+    const  Collections= await collections.json()
+
+    // const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
+    // const { data: Collections } = useQuery({
+    //     queryKey: ['categories'],
+    //     queryFn: getCollections,
+    //     select: (data) => data.results,
+    //   });
       
     return (
         <div>
@@ -112,7 +115,7 @@ function App() {
                     <Suspense fallback={<Loading/>} >
                     <div className="flex gap-11">
                     {data ? (
-  Array(5).fill(data?.results).flat().slice(0, 5).map((product, id) => (
+  Array(5).fill(data.results).flat().slice(0, 5).map((product, id) => (
     <Link href={`products/${product.id}`}  className="cursor-pointer  w-[310px] h-[345px] bg-black rounded-2xl text-white" key={id}>
       <Image className="" src={product.images?.[0]?.images} alt={product.title_en} width={310} height={374} />
       <p className="pt-[14px] text-center text-[20px] leading-none my-0">{product.title_en}</p>
@@ -145,19 +148,19 @@ function App() {
             <section>
                 <div className={'pt-[268px]'}>
                     <p className={'center-text'}>Our Collections</p>
-              {Collections && <><div className={'flex gap-x-[46px]'}>
-               <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[0].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[0].icon} alt={Collections[0].title_en} width={802} height={460}/></div>
-               <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[1].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[1].icon} alt={Collections[1].title_en} width={1072} height={460}/></div>
+              {Collections?.results && <><div className={'flex gap-x-[46px]'}>
+               <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[0].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[0].icon} alt={Collections.results[0].title_en} width={802} height={460}/></div>
+               <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[1].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[1].icon} alt={Collections.results[1].title_en} width={1072} height={460}/></div>
                </div>
                     <div className={'flex gap-[46px] pt-[46px]'}>
-                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[2].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[2].icon} alt={Collections[2].title_en} width={889} height={480}/></div>
-                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[3].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[3].icon} alt={Collections[3].title_en} width={974} height={480}/></div>
+                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[2].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[2].icon} alt={Collections.results[2].title_en} width={889} height={480}/></div>
+                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[3].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[3].icon} alt={Collections.results[3].title_en} width={974} height={480}/></div>
 
                     </div>
                     <div className={'flex gap-[46px] pt-[46px] '}>
-                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[4].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[4].icon} alt={Collections[4].title_en} width={555} height={480}/></div>
-                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[5].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[5].icon} alt={Collections[5].title_en} width={555} height={480}/></div>
-                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections[6].title_en}</p> <Image className={'object-cover  h-full'} src={Collections[6].icon} alt={Collections[6].title_en} width={555} height={480}/></div>
+                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[4].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[4].icon} alt={Collections.results[4].title_en} width={555} height={480}/></div>
+                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[5].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[5].icon} alt={Collections.results[5].title_en} width={555} height={480}/></div>
+                        <div className={'relative'}><p className={'absolute text-[24px] font-medium text-white bottom-0 left-10'}>{Collections.results[6].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[6].icon} alt={Collections.results[6].title_en} width={555} height={480}/></div>
                     </div></>}
                 </div>
             </section>

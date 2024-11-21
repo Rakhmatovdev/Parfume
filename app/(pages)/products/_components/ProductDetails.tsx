@@ -11,7 +11,7 @@ import { getProductById, getProducts } from "@/lib/services/service";
 import { useParams } from "next/navigation";
 
 
-function ProductDetails() {
+ function ProductDetails() {
   const { productId} = useParams<{ productId: string }>();
 
   const { data,isLoading } = useQuery({
