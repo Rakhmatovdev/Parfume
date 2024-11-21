@@ -1,18 +1,19 @@
 import React from 'react';
 import {FooterBG} from "@/public";
-import {FacebookOutlined, InstagramOutlined, LinkedinOutlined, TwitterOutlined} from "@ant-design/icons";
+import { InstagramOutlined, TwitterOutlined} from "@ant-design/icons";
 import {fCategories, fCustomers, fPages, fShopping} from "@/lib/types/type";
 import Link from "next/link";
-
+import { CgFacebook  } from "react-icons/cg";
+import { GrLinkedinOption,GrTwitter,GrInstagram,GrFacebook } from "react-icons/gr";
 function Footer() {
     return (
         <>
-            <div className={'h-[635px] w-full object-cover bg-cover bg-center px-[200px] py-[116px] text-white'}
+            <div className={'sm:h-[635px] w-full object-cover bg-cover bg-center sm:px-[200px] sm:py-[116px] text-white'}
                  style={{backgroundImage: `url(${FooterBG.src})`}}>
-                <div className={'flex justify-between items-center gap-[140px]'}>
-                    <div>
-                        <p className={'text-[#FFBF34] text-[36px] my-0'}>Perfume</p>
-                        <p className={'mt-[26px] font-medium text-[24px]'}>Subscribe to Our Newsletter:</p>
+                <div className={'flex flex-col sm:flex-row sm:justify-between sm:items-center sm:gap-[140px]'}>
+                    <div className='p-4'> 
+                        <p className={'text-[#FFBF34] text-[20px] sm:text-[36px] my-0'}>Perfume</p>
+                        <p className={'sm:mt-[26px] mt-4 font-medium sm:text-[24px]'}>Subscribe to Our Newsletter:</p>
                         <p className={'max-w-[304px]'}>Receive Updates on New Arrivals and Special Promotions!</p>
                         <form className={'flex'}>
                             <input
@@ -23,39 +24,39 @@ function Footer() {
                         </form>
                         <div className={'flex mt-[29px] gap-x-[15px]'}>
                             <div className={'rounded-full  px-[9px] pt-[8.5px] pb-[7px] bg-[#1DA1F2]'}>
-                                <TwitterOutlined className={'text-[text-white] text-lg'}/>
+                                <GrTwitter className={'text-[text-white] text-lg'}/>
                             </div>
                             <div className={'rounded-full  px-[9px] pt-[8.5px] pb-[7px] bg-[#3B5998]'}>
-                                <FacebookOutlined className={'text-[text-white] text-lg'}/>
+                                <CgFacebook   className={'text-[text-white] text-lg'}/>
                             </div>
                             <div className={'rounded-full  px-[9px] pt-[8.5px] pb-[7px] bg-[#0077B5]'}>
-                                <LinkedinOutlined className={'text-[text-white] text-lg'}/>
+                                <GrLinkedinOption  className={'text-[text-white] text-lg'}/>
                             </div>
                             <div className={'rounded-full  px-[9px] pt-[8.5px] pb-[7px] bg-[#C13584]'}>
-                                <InstagramOutlined className={'text-[text-white] text-lg'}/>
+                                <GrInstagram className={'text-[text-white] text-lg'}/>
                             </div>
                         </div>
                     </div>
-                    <div className={'flex justify-between flex-1'}>
-                    <div>
+                    <div className={'flex  flex-wrap sm:flex-row  sm:justify-between sm:flex-1'}>
+                    <div className='p-4 sm:p-0'>
                         <p className={'font-bold'}>Categories</p>
                         <div className={'flex flex-col gap-y-[10px]'}> {fCategories.map((data) => (
                             <Link href={data.path} key={data.id}>{data.name}</Link>))}
                         </div>
                     </div>
-                    <div>
+                    <div className='p-4 sm:p-0'>
                         <p className={'font-bold'}>Shopping</p>
                         <div className={'flex flex-col gap-y-[10px]'}> {fShopping.map((data) => (
                             <Link href={data.path} key={data.id}>{data.name}</Link>))}
                         </div>
                     </div>
-                    <div>
+                    <div className='p-4 sm:p-0'>
                         <p className={'font-bold'}>Customer care</p>
                         <div className={'flex flex-col gap-y-[10px]'}> {fCustomers.map((data) => (
                             <Link href={data.path} key={data.id}>{data.name}</Link>))}
                         </div>
                     </div>
-                    <div>
+                    <div className='p-4 sm:p-0'>
                         <p className={'font-bold'}>Pages</p>
                         <div className={'flex flex-col gap-y-[10px]'}> {fPages.map((data) => (
                             <Link href={data.path} key={data.id}>{data.name}</Link>))}
@@ -63,8 +64,8 @@ function Footer() {
                     </div>
                     </div>
                 </div>
-               <div className={'flex justify-center items-center mt-12 '}><hr className={'h-px border-0 bg-[#333333] w-[80%]'}/></div>
-                <div className={'mt-12'}><p className={'text-center text-[11px]'}>&copy; {new Date(Date.now()).getFullYear()} Perfume. All rights reserved </p></div>
+               <div className={'flex justify-center items-center mt-8 md:mt-12  '}><hr className={'h-px border-0 bg-[#333333] w-[80%]'}/></div>
+                <div><p className={'text-center text-[11px] py-8 md:py-12 '}>&copy; {new Date(Date.now()).getFullYear()} Perfume. All rights reserved </p></div>
             </div>
         </>
     );

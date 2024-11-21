@@ -10,7 +10,16 @@ import { useQuery } from "@tanstack/react-query";
 import { getProductById, getProducts } from "@/lib/services/service";
 import { useParams } from "next/navigation";
 
-function ProductDetails() {
+export const revalidate = 60
+export const dynamicParams = true
+export async function generateStaticParams() {
+    const gets = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/').then((res) =>
+      res.json()
+    ).then(data=>console.log(data)
+    )
+  }
+
+async function ProductDetails({ params }: { params: { id: string } }) {
   const { productId} = useParams<{ productId: string }>();
 
   const { data,isLoading } = useQuery({

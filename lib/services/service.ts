@@ -5,8 +5,7 @@ import { PaginatedResponse,PaginatedCategoryResponse,PostData} from "../types/ty
 
 
 
-export const getProducts = (params?: Record<string, any>): Promise<PaginatedResponse> =>
-    request.get('/products', { params }).then((res: AxiosResponse<PaginatedResponse>) => res.data);
+
 
 export const getCollections = (params?: Record<string, any>): Promise<PaginatedCategoryResponse> =>
     request.get('/categories/', { params }).then((res: AxiosResponse<PaginatedCategoryResponse>) => res.data);
@@ -14,6 +13,15 @@ export const getCollections = (params?: Record<string, any>): Promise<PaginatedC
 export const getProductById = (id: string): Promise<PostData> =>
     request.get(`/products/${id}/`).then((res: AxiosResponse<PostData>) => res.data);
 
+
+export const getProducts = (params?: Record<string, any>): Promise<PaginatedResponse> =>
+    request.get('/products', { params }).then((res: AxiosResponse<PaginatedResponse>) => res.data);
+
+export async function getData(){
+    let datas = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
+    let  data= await datas.json()
+    return data && data.results
+}
 
 // export const createProducts = (data?: PostData): Promise<PostData> =>
 //     request.post('/products', data, {

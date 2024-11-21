@@ -1,18 +1,14 @@
-'use client'
 import { Aqua, SaleBG } from "@/public";
-import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { getProducts } from "../../../../lib/services/service";
 import Link from "next/link";
 
-function Products() {
-    const { data } = useQuery({
-        queryKey: ['todos'],
-        queryFn: getProducts,
-      });
+async function Products () {
+   
+  let datas = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
+  let  data= await datas.json()
       
     return (
-        <data>
+        <>
             <section>
                 <div className={'pt-[243px] wrapper'}>
                     <p className={'text-center text-[#C78800] text-[32px]'}>Best Selling Products</p>
@@ -126,7 +122,7 @@ function Products() {
                     </div>
                 </div>
             </section>
-        </data>
+        </>
     );
 }
 
