@@ -10,10 +10,6 @@ import { useQuery } from "@tanstack/react-query";
 import { getProductById, getProducts } from "@/lib/services/service";
 import { useParams } from "next/navigation";
 
-export const revalidate = 60
-export const dynamicParams = true
-export async function generateStaticParams() {
-  }
 
 async function ProductDetails() {
   const { productId} = useParams<{ productId: string }>();
