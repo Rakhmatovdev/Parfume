@@ -13,13 +13,9 @@ import { useParams } from "next/navigation";
 export const revalidate = 60
 export const dynamicParams = true
 export async function generateStaticParams() {
-    const gets = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/').then((res) =>
-      res.json()
-    ).then(data=>console.log(data)
-    )
   }
 
-async function ProductDetails({ params }: { params: { id: string } }) {
+async function ProductDetails() {
   const { productId} = useParams<{ productId: string }>();
 
   const { data,isLoading } = useQuery({

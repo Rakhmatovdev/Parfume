@@ -4,8 +4,8 @@ import Link from "next/link";
 
 async function Products () {
    
-  let datas = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
-  let  data= await datas.json()
+  const datas = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
+  const  data= await datas.json()
       
     return (
         <>

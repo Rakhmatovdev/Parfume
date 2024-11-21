@@ -17,11 +17,6 @@ export const getProductById = (id: string): Promise<PostData> =>
 export const getProducts = (params?: Record<string, any>): Promise<PaginatedResponse> =>
     request.get('/products', { params }).then((res: AxiosResponse<PaginatedResponse>) => res.data);
 
-export async function getData(){
-    let datas = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
-    let  data= await datas.json()
-    return data && data.results
-}
 
 // export const createProducts = (data?: PostData): Promise<PostData> =>
 //     request.post('/products', data, {

@@ -1,10 +1,9 @@
 import React from 'react';
 import {FooterBG} from "@/public";
-import { InstagramOutlined, TwitterOutlined} from "@ant-design/icons";
 import {fCategories, fCustomers, fPages, fShopping} from "@/lib/types/type";
 import Link from "next/link";
 import { CgFacebook  } from "react-icons/cg";
-import { GrLinkedinOption,GrTwitter,GrInstagram,GrFacebook } from "react-icons/gr";
+import { GrLinkedinOption,GrTwitter,GrInstagram} from "react-icons/gr";
 function Footer() {
     return (
         <>
