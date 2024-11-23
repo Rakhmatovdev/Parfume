@@ -9,7 +9,12 @@ import Progressing from "@/app/(pages)/products/_components/Progres";
 import { useQuery } from "@tanstack/react-query";
 import { getProductById, getProducts } from "@/lib/services/service";
 import { useParams } from "next/navigation";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Link from "next/link";
 
  function ProductDetails() {
   const { productId} = useParams<{ productId: string }>();
@@ -246,41 +251,41 @@ return <div>Loading...</div>
         </div>
       </section>
       <section>
-        <div className={"wrapper sm:mb-[120px] mt-10"}>
-          <p className={"center-text sm:mt-[170px] mt-10 text-[#CACACA]"}>
+        <div className={"wrapper mb-10 sm:mb-[120px] mt-10"}>
+          <p className={"sm:center-text px-2 sm:px-0 sm:mt-[170px] mt-10 text-[#CACACA] text-xl font-bold"}>
             Discover More
           </p>
-          <div className={"flex gap-11"}>
-            {data?.results?.map((product) => (
-              <div
-                className={
-                  "w-[310px] h-[345px] bg-black rounded-2xl  text-white"
-                }
-                key={product.id}
-              >
-                <Image
-                  className={""}
-                  src={product.images[0].images}
-                  alt={product.title_en}
-                  width={310}
-                  height={374}
-                />
-                <p
-                  className={
-                    " pt-[14px] text-center text-[20px] leading-none my-0 "
-                  }
-                >
-                  {product.title_en}
-                </p>
-                <div
-                  className={"flex justify-center items-center gap-x-1 mt-2"}
-                >
-                  <p className={"text-[#FFBF34]"}>${product.price}</p>
-                  <p>{product.description_en}</p>
-                </div>
-              </div>
+          <Swiper
+                className=" sm:pt-24  rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-11"
+                spaceBetween={50}
+                slidesPerView={1}
+                breakpoints={{
+                  640: {slidesPerView: 2, spaceBetween: 20},
+                  768: {slidesPerView: 4, spaceBetween: 30},
+                  1024: {slidesPerView: 5, spaceBetween: 40},
+                }}
+            >
+            {data?.results?.map((product,id) => (
+                <SwiperSlide key={id} className={'bg-black  rounded-2xl'}>
+                  <Link href={`products/${product.id}`}
+                        className="  2xl:h-[405px] h-full rounded-2xl text-white cursor-pointer">
+                    <Image
+                        className="h-[270px] w-full object-cover rounded-t-2xl sm:w-[310px] 2xl:h-[310px]"
+                        src={product.images?.[0]?.images || '/placeholder-image.jpg'}
+                        alt={product.title_ru || 'Product image'}
+                        width={310}
+                        height={310}
+                    />
+                    <p className="pt-[14px] text-center text-[20px] leading-none my-0">{product.title_en || 'No Title'}</p>
+                    <div className="flex justify-center items-center gap-x-1 mt-2">
+                      <p className="text-[#FFBF34]">${product.price}</p>
+                      <p>{product.description_ru || 'No description available'}</p>
+                    </div>
+                  </Link>
+
+                </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
     </div>
