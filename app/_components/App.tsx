@@ -1,3 +1,4 @@
+'use client'
 import { Articles } from "@/lib/types/type";
 import { HeroImg, SaleBG, values, ValuesBG } from "@/public";
 import Hero1 from "../../public/images/hero1.png"
@@ -8,24 +9,19 @@ import {
     TwitterOutlined
 } from "@ant-design/icons";
 import Image from "next/image";
-import { Suspense } from "react";
-import Loading from "../loading";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { getCollections, getProducts } from "@/lib/services/service";
 
 
-async function App() {
-    const Data = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/products/')
-    const  data= await Data.json()
+function App() {
+  
 
-    const collections = await fetch('https://parfumeapi.pythonanywhere.com/api/v1/categories/')
-    const  Collections= await collections.json()
-
-    // const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
-    // const { data: Collections } = useQuery({
-    //     queryKey: ['categories'],
-    //     queryFn: getCollections,
-    //     select: (data) => data.results,
-    //   });
+    const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
+    const { data: Collections } = useQuery({
+        queryKey: ['categories'],
+        queryFn: getCollections
+      });
       
     return (
         <div>
@@ -112,7 +108,7 @@ async function App() {
             <section>
                 <div className="wrapper">
                 <p className={'center-text'}>Best selling products</p>
-                    <Suspense fallback={<Loading/>} >
+                    
                     <div className="flex gap-11">
                     {data ? (
   Array(5).fill(data.results).flat().slice(0, 5).map((product, id) => (
@@ -141,8 +137,6 @@ async function App() {
       </div>
     ))
 )}</div>
-
-                    </Suspense>
                 </div>
             </section>
             <section>

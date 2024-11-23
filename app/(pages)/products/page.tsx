@@ -1,10 +1,9 @@
 import Products from "@/app/(pages)/products/_components/Products";
-import { Suspense } from "react";
-import Loading from "./loading";
+import SEO from "@/app/seo";
 
 function Page() {
     return (
-        <Suspense fallback={<Loading/>}><Products/></Suspense>
+        <><SEO title={'Products'}/><Products/></>
     );
 }
 

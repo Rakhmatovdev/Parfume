@@ -13,7 +13,7 @@ function Navbar() {
     return (
         <div>
             <section className="flex items-center justify-between w-full wrapper mt-10 sm:mt-[51px]">
-<Link href={'/'}><Image className='w-16 h-14 sm:w-[85px] sm:h-[76px]' src={Logo.src} alt="logo" width={85} height={76} /></Link>
+<Link href={'/'}><Image className='w-16 h-14 sm:w-[85px] sm:h-[76px]' priority={false} loading = 'lazy' src={Logo.src} alt="logo" width={85} height={76} /></Link>
                 <div className="items-center gap-x-[91px] my-0 hidden sm:flex ">
                     <div className={'flex gap-x-[51px] my-0'}>
                         {Links.map((link) => (<Link href={link.url} key={link.id} className="">

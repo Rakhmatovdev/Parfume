@@ -1,8 +1,12 @@
 import ProductDetails from "@/app/(pages)/products/_components/ProductDetails";
+import SEO from "@/app/seo";
 
 function Page() {
     return (
-        <div><ProductDetails/></div>
+        <>
+            <SEO title='Product detail: Nº'/>
+            <ProductDetails/>
+        </>
     );
 }
 

@@ -1,5 +1,4 @@
 'use client'
-import React from "react";
 import Navbar from "@/app/_components/Navbar";
 import Footer from "@/app/_components/Footer";
 import {

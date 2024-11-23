@@ -34,7 +34,7 @@ return <div>Loading...</div>
   return (
     <div>
       <section>
-        <div className={"flex justify-center  gap-x-64 mt-[309px]"}>
+        <div className={"flex flex-col sm:flex-row sm:justify-center px-2 sm:px-0  sm:gap-x-64 sm:mt-[309px] mt-20"}>
           {productOne && (
             <Image
               className={"rounded-3xl bg-cover bg-center object-cover"}
@@ -45,7 +45,7 @@ return <div>Loading...</div>
             />
           )}
           <div>
-            <p className={"text-[40px]"}>Luxurious Elixir</p>
+            <p className={"sm:text-[40px] text-2xl mt-2 sm:mt-0"}>Luxurious Elixir</p>
             <p className={"max-w-[608px] text-[#151515] tracking-wide"}>
               Step into a world of unparalleled opulence with Luxurious Elixir,
               an exquisite fragrance that weaves an enchanting symphony of gold
@@ -66,7 +66,7 @@ return <div>Loading...</div>
             </div>
             {productOne && (
               <div>
-                <div className={"flex gap-x-[30px] mt-10"}>
+                <div className={"flex gap-x-[30px] mt-4 sm:mt-10"}>
                   <div>
                     <input
                       type="radio"
@@ -117,18 +117,18 @@ return <div>Loading...</div>
                         width={88}
                         height={124.5}
                       />{" "}
-                      <p className={"text-center mt-[10px] my-0"}>
+                      <p className={"text-center sm:mt-[10px] mt-4 my-0"}>
                         {productOne.description_ru}
                       </p>
                     </label>
                   </div>
                 </div>
-                <p className={"text-[24px] text-[#C78800] my-0 mt-9"}>
+                <p className={"text-[24px] text-[#C78800] my-0 sm:mt-9 mt-4"}>
                   ${productOne?.price}
                 </p>
               </div>
             )}
-            <div className={"mt-9 flex items-center gap-x-[62px]"}>
+            <div className={"sm:mt-9 mt-4 flex items-center gap-x-[62px]"}>
               <Badger />
               <div className={"flex gap-x-4"}>
                 <p className={"my-0"}>Wish list</p>
@@ -164,9 +164,9 @@ return <div>Loading...</div>
         </div>
       </section>
       <section>
-        <div className={"mt-[120px] wrapper"}>
-          <p className={"text-[32px] tracking-wide"}>Product Details</p>
-          <p className={"text-[20px] tracking-wide my-0"}>
+        <div className={"sm:mt-[120px] mt-10 wrapper"}>
+          <p className={"sm:text-[32px] text-xl font-bold tracking-wide"}>Product Details</p>
+          <p className={"sm:text-[20px] tracking-wide my-0"}>
             Step into a world of unparalleled opulence with Luxurious Elixir, an
             exquisite fragrance that weaves an enchanting symphony of gold and
             luxury. This gilded elixir is a celebration of sophistication,
@@ -175,7 +175,7 @@ return <div>Loading...</div>
             dry-down, Luxurious Elixir promises an intoxicating experience that
             embodies the essence of lavish indulgence.
           </p>
-          <p className={"text-[32px] tracking-wide mt-[116px]"}>
+          <p className={"sm:text-[32px] text-xl font-bold tracking-wide sm:mt-[116px] mt-10"}>
             The Golden Overture
           </p>
           <p className={"text-[20px] tracking-wide"}>
@@ -191,8 +191,8 @@ return <div>Loading...</div>
       </section>
       <section>
         <div className={"wrapper"}>
-          <p className={"center-text mt-[120px]"}>Reviews</p>
-          <div className={"flex justify-center gap-[120px]"}>
+          <p className={"center-text sm:mt-[120px] mt-20"}>Reviews</p>
+          <div className={"flex sm:flex-row flex-col sm:justify-center sm:gap-[120px]"}>
               <Progressing />
             <div className={"text-[#252525]"}>
               <Rate
@@ -210,7 +210,7 @@ return <div>Loading...</div>
             </div>
           </div>
           <div className={"flex flex-col gap-y-10 mt-10"}>
-            {Reviews.map((review) => (
+            {Reviews.map((review ) => (
               <div className={"flex gap-x-4 items-start mt-6"} key={review.id}>
                 <Image
                   src={review.image}
@@ -235,7 +235,6 @@ return <div>Loading...</div>
             ))}
           </div>
           <div className={"flex justify-center items-center mt-10"}>
-            {" "}
             <button
               className={
                 "tracking-wide px-[65px] py-4 border border-[#252525] text-[#252525] rounded-[10px]"
@@ -247,8 +246,8 @@ return <div>Loading...</div>
         </div>
       </section>
       <section>
-        <div className={"wrapper mb-[120px]"}>
-          <p className={"center-text mt-[170px] text-[#CACACA]"}>
+        <div className={"wrapper sm:mb-[120px] mt-10"}>
+          <p className={"center-text sm:mt-[170px] mt-10 text-[#CACACA]"}>
             Discover More
           </p>
           <div className={"flex gap-11"}>
