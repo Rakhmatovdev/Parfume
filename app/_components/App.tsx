@@ -157,7 +157,7 @@ function App() {
             </section>
             <section>
                 <div className={'sm:pt-[268px] pt-10 '}>
-                    <p className={'sm:center-tex text-xl font-bold px-2 sm:px-0'}>Our Collections</p>
+                    <p className={'sm:center-text text-xl font-bold px-2 sm:px-0'}>Our Collections</p>
               {Collections?.results && <><div className={'flex gap-x-2 sm:gap-x-[46px]'}>
                <div className={'relative'}><p className={'absolute text-[8px] sm:text-[24px] line-clamp-1 font-medium text-white bottom-0 left-2 sm:left-10'}>{Collections.results[0].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[0].icon} alt={Collections.results[0].title_en} width={802} height={460}/></div>
                <div className={'relative'}><p className={'absolute text-[8px] sm:text-[24px] line-clamp-1 font-medium text-white bottom-0 left-2 sm:left-10'}>{Collections.results[1].title_en}</p> <Image className={'object-cover  h-full'} src={Collections.results[1].icon} alt={Collections.results[1].title_en} width={1072} height={460}/></div>
