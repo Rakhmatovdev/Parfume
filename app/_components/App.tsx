@@ -11,32 +11,60 @@ import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { getCollections, getProducts } from "@/lib/services/service";
-import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperClass, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import {CgFacebook} from "react-icons/cg";
+import { useState } from "react";
+import { Controller } from 'swiper/modules';
+
 
 function App() {
   
+    const [swiper, setSwiper] = useState<SwiperClass | null>(null);
 
     const {data} = useQuery({ queryKey: ['todos'], queryFn: getProducts})
     const { data: Collections } = useQuery({
         queryKey: ['categories'],
         queryFn: getCollections
       });
+      console.log(data);
+
+      const NextB = (e: React.MouseEvent<HTMLButtonElement>) => { // To'g'ri tur belgilandi
+        e.preventDefault();
+        if (swiper) {
+          swiper.slideNext();
+        }
+      };
+    
+      const PrevB = (e: React.MouseEvent<HTMLButtonElement>) => { // To'g'ri tur belgilandi
+        e.preventDefault();
+        if (swiper) {
+          swiper.slidePrev();
+        }
+      };
       
     return (
-        <div>
+        <>
 
             <section>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between wrapper mt-10 sm:mt-0">
+               <Swiper className=""
+                 modules={[Controller]}
+                 onSwiper={setSwiper}
+               >
+
+                {data?.results?.map((_,id:any)=>
+                <SwiperSlide key={id}>
+                
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between wrapper mt-10 sm:mt-0">  
                     <div className="flex sm:flex-col sm:gap-y-[43px] gap-x-2 sm:gap-x-2">
-                        <TwitterOutlined className="sm:-rotate-90 text-2xl "/>
-                        <CgFacebook className="sm:-rotate-90 text-2xl"/>
-                        <InstagramOutlined className="sm:-rotate-90 text-2xl"/>
+                        <TwitterOutlined className="sm:-rotate-90 text-2xl cursor-pointer "/>
+                        <CgFacebook className="sm:-rotate-90 text-2xl cursor-pointer"/>
+                        <InstagramOutlined className="sm:-rotate-90 text-2xl cursor-pointer"/>
                     </div>
+
                     <div>
                         <p className="sm:text-[15px] font-semibold mt-4 sm:mt-0">WRIST WATCH, 2018</p>
                         <p className="sm:text-[70px] font-bold text-[24px] leading-[50px] ">{"PerFume".toUpperCase()}</p>
@@ -51,32 +79,36 @@ function App() {
                             </div>
                         </div>
                     </div>
+                
+
                     <div className="relative">
                         <Image className={"w-[200px] h-[200px] sm:w-[430px] sm:h-[648px]"} src={Hero1.src} alt="Hero 1" width={430} height={648} />
                         <Image src={Hero2.src} alt="Hero 1" width={328} height={494}
-                               className="absolute bottom-0 left-24 sm:bottom-10 sm:left-[247px] -z-10 w-[200px] h-[200px] sm:w-[328px] sm:h-[494px]"/>
+                               className="absolute bottom-0 left-32 sm:bottom-10 sm:left-[247px] -z-10 w-[130px] h-[150px] sm:w-[328px] sm:h-[494px]"/>
                     </div>
+
                     <div className="sm:flex flex-col  sm:items-center hidden sm:gap-y-[150px] sm:translate-x-8">
                         <div className="flex justify-end items-end "><p
                             className="rotate-90 text-[15px] text-[#484848]">
-                            StakeHolder Name
+                            StakeHolder Namem {id+1}
                         </p></div>
                         <div className="rotate-90 w-[70px] h-[2px] bg-[#A0A0A0]"/>
                     </div>
-                </div>
+ </div></SwiperSlide>) }
+                </Swiper>
 
             </section>
             <section>
-                <div className="flex mt-10 items-center sm:justify-between w-full wrapper text-[#535353]">
-                    <div className={'flex sm:gap-x-[143px] w-full justify-between items-center sm:justify-start sm:items-start  '}>
-                        <p>01</p>
+                <div className="flex mt-10 items-center justify-between w-full wrapper text-[#535353]">
+                    {/* <div className={'flex sm:gap-x-[143px] w-full justify-between items-center sm:justify-start sm:items-start  '}> */}
+                        <p className="my-0">01</p>
                         <div>
-                            <LeftOutlined className={'cursor-pointer'}/>
-                            <RightOutlined className={'cursor-pointer'}/>
+                            <LeftOutlined className={'cursor-pointer'} onClick={PrevB}/>
+                            <RightOutlined className={'cursor-pointer'} onClick={NextB}/>
                         </div>
-                    </div>
-                    <div className={'sm:flex hidden'}>{"Parfume".toUpperCase()}</div>
-                </div>
+                    {/* </div> */}
+                    {/* <div className={'sm:flex hidden'}>{"Parfume".toUpperCase()}</div> */}
+              </div>
             </section>
             <section>
                 <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between w-full sm:h-[731px] mt-10 sm:mt-[142px]"
@@ -200,7 +232,7 @@ function App() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 }
 
